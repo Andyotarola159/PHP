@@ -22,7 +22,7 @@ class Coche{
    }
    function girar(){
 
-       echo "girar";
+       echo "girar" ."<br>";
 
    }
    function frenar(){
@@ -46,12 +46,9 @@ class Coche{
 
 }
 
-class Camion{
+class Camion extends Coche{ #EXTENDS : SIR VE PARA HEREDAR CODIGO DE UNA CLASE
 
-   var $ruedas;
-   var $color;
-   var $motor;
-   var $tamaño;     
+  
     
    function Camion(){   #metodo constructor
 
@@ -60,43 +57,14 @@ class Camion{
        $this->motor=2600;
        $this->tamaño="";
    }
-
-   function arrancar(){
-
-      echo "Arrancar";
-
-   }
    function girar(){
-
-       echo "girar";
-
+   
+    parent::girar(); #PARENT:Lo que hace es ejecutar todo lo que hay en el metodo girar y despues ejecutar todo lo que hayas escrito en el nuevo metodo
+ 
+    echo "arrancado";
+   
    }
-   function frenar(){
-
-       echo "frenar";
-
-   }
-  function establece_color($color_coche){
-
-      $this->color=$color_coche;
-    
-      echo "El color de este coche es:" . $this->color;
-  }
-
-  function establece_tamaño($coche_tamaño){
-      $this->tamaño=$coche_tamaño;
-
-      echo "El tamaño de este coche es : " . $this->tamaño;
-  }
-
-
 }
-
-
-
-
-
-
 
 /*$ferrari=new Coche();     #Instancias
 $mazda=new Coche();
